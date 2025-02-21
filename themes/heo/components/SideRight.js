@@ -7,6 +7,7 @@ import { InfoCard } from './InfoCard'
 import LatestPostsGroupMini from './LatestPostsGroupMini'
 import TagGroups from './TagGroups'
 import TouchMeCard from './TouchMeCard'
+import AsukaCard from './AsukaCard'
 
 const FaceBookPage = dynamic(
   () => {
@@ -34,7 +35,7 @@ export default function SideRight(props) {
 
   return (
     <div id='sideRight' className='hidden xl:block w-72 space-y-4 h-full'>
-      <InfoCard {...props} className='w-72 wow fadeInUp' />
+      {/* <InfoCard {...props} className='w-72 wow fadeInUp' /> */}
 
       <div className='sticky top-20 space-y-4'>
         {/* 文章页显示目录 */}
@@ -46,31 +47,31 @@ export default function SideRight(props) {
 
         {/* 联系交流群 */}
         <div className='wow fadeInUp'>
-          <TouchMeCard />
+          <AsukaCard />
         </div>
 
         {/* 最新文章列表 */}
-        <div
+        {/* <div
           className={
             'border wow fadeInUp  hover:border-indigo-600  dark:hover:border-yellow-600 duration-200 dark:border-gray-700 dark:bg-[#1e1e1e] dark:text-white rounded-xl lg:p-6 p-4 hidden lg:block bg-white'
           }>
           <LatestPostsGroupMini {...props} />
-        </div>
+        </div> */}
 
         {rightAreaSlot}
 
         <FaceBookPage />
-        <Live2D />
+        {/* <Live2D /> */}
 
         {/* 标签和成绩 */}
-        <Card
+        {/* <Card
           className={
             'bg-white dark:bg-[#1e1e1e] dark:text-white hover:border-indigo-600  dark:hover:border-yellow-600 duration-200'
           }>
           <TagGroups tags={sortedTags} currentTag={currentTag} />
           <hr className='mx-1 flex border-dashed relative my-4' />
           <AnalyticsCard {...props} />
-        </Card>
+        </Card> */}
       </div>
     </div>
   )

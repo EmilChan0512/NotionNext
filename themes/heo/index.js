@@ -462,7 +462,7 @@ const LayoutCategoryIndex = props => {
  * @returns
  */
 const LayoutTagIndex = props => {
-  const { tagOptions } = props
+  const { tagOptions } = props || {[tagOptions]: []}
   const { locale } = useGlobal()
 
   return (
