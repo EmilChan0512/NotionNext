@@ -80,33 +80,47 @@ function Banner(props) {
     <div
       id='banners'
       onClick={handleClickBanner}
-      className='hidden xl:flex xl:flex-col group h-full bg-white dark:bg-[#1e1e1e] rounded-xl border dark:border-gray-700 mb-3 relative overflow-hidden'>
+      className='hidden xl:flex xl:flex-col group h-full bg-[#1a1a1a] rounded-xl border-2 border-[#5e35b1] mb-3 relative overflow-hidden'>
       <div
         id='banner-title'
         className='z-10 flex flex-col absolute top-10 left-10'>
-        <div className='text-4xl font-bold mb-3  dark:text-white'>
-          {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
+        <div className='text-4xl font-bold mb-3 text-[#b388ff] font-mono' style={{ textShadow: '0 0 10px #7c4dff' }}>
+          EVANGELION
           <br />
-          {siteConfig('HEO_HERO_TITLE_2', null, CONFIG)}
+          PROJECT-01
         </div>
-        <div className='text-xs text-gray-600  dark:text-gray-200'>
-          {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
+        <div className='text-xs text-[#69f0ae] font-mono tracking-wider'>
+          NERV // TACTICAL OPERATIONS
         </div>
       </div>
 
       {/* 斜向滚动的图标 */}
-      <TagsGroupBar />
+      {/* <TagsGroupBar /> */}
 
-      {/* 遮罩 */}
+      {/* EVA 风格的遮罩 */}
       <div
         id='banner-cover'
-        style={{ backdropFilter: 'blur(15px)' }}
-        className={
-          'z-20 rounded-xl overflow-hidden opacity-0 group-hover:opacity-100 duration-300 transition-all bg-[#4259efdd] dark:bg-[#dca846] dark:text-white cursor-pointer absolute w-full h-full top-0 flex justify-start items-center'
-        }>
+        className={`
+    z-20 rounded-xl overflow-hidden opacity-0 group-hover:opacity-100 
+    duration-300 transition-all cursor-pointer absolute w-full h-full top-0 
+    flex justify-start items-center
+    bg-[#1a1a1a]/95
+    before:content-[''] before:absolute before:inset-0 
+    before:bg-[url('/images/eva-hexagon.svg')] before:opacity-40
+    before:bg-repeat before:bg-[length:100px_100px]
+    after:content-[''] after:absolute after:inset-0
+    after:bg-gradient-to-br after:from-[#5e35b1]/60 after:to-transparent after:opacity-100
+  `}>
         <div className='ml-12 -translate-x-32 group-hover:translate-x-0 duration-300 transition-all ease-in'>
-          <div className='text-7xl text-white font-extrabold'>{coverTitle}</div>
-          <div className='-ml-3 text-gray-300'>
+          <div
+            className='text-7xl text-[#69f0ae] font-bold font-mono'
+            style={{
+              // textShadow: '0 0 15px #69f0ae, 0 0 30px #69f0ae33',
+              WebkitTextStroke: '1px #1a1a1a'
+            }}>
+            LAUNCH
+          </div>
+          <div className='-ml-3 text-[#69f0ae]'>
             <ArrowSmallRight className={'w-24 h-24 stroke-2'} />
           </div>
         </div>
@@ -178,31 +192,25 @@ function GroupMenu() {
     <div className='h-[165px] select-none xl:h-20 flex flex-col justify-between xl:space-y-0 xl:flex-row w-28 lg:w-48 xl:w-full xl:flex-nowrap xl:space-x-3'>
       <Link
         href={url_1}
-        className='group relative overflow-hidden bg-gradient-to-r from-blue-500 to-blue-400 flex h-20 justify-start items-center text-white rounded-xl xl:hover:w-1/2 xl:w-1/3 transition-all duration-500 ease-in'>
-        <div className='font-bold lg:text-lg  pl-5 relative -mt-2'>
+        className='group relative overflow-hidden bg-gradient-to-r from-[#7c4dff] to-[#5e35b1] flex h-20 justify-start items-center text-white rounded-xl xl:hover:w-1/2 xl:w-1/3 transition-all duration-500 ease-in border border-[#b388ff]'>
+        <div className='font-bold lg:text-lg font-mono pl-5 relative -mt-2'>
           {title_1}
-          <span className='absolute -bottom-0.5 left-5 w-5 h-0.5 bg-white rounded-full'></span>
-        </div>
-        <div className='hidden lg:block absolute right-6  duration-700 ease-in-out transition-all scale-[2] translate-y-6 rotate-12 opacity-20 group-hover:opacity-80 group-hover:scale-100 group-hover:translate-y-0 group-hover:rotate-0'>
-          <i className='fa-solid fa-star text-4xl'></i>
+          <span className='absolute -bottom-0.5 left-5 w-5 h-0.5 bg-[#69f0ae] rounded-full'></span>
         </div>
       </Link>
       <Link
         href={url_2}
-        className='group relative overflow-hidden bg-gradient-to-r from-red-500 to-yellow-500 flex h-20 justify-start items-center text-white rounded-xl xl:hover:w-1/2 xl:w-1/3 transition-all duration-500 ease-in'>
-        <div className='font-bold lg:text-lg pl-5 relative -mt-2'>
+        className='group relative overflow-hidden bg-gradient-to-r from-[#69f0ae] to-[#00bfa5] flex h-20 justify-start items-center text-[#1a1a1a] rounded-xl xl:hover:w-1/2 xl:w-1/3 transition-all duration-500 ease-in border border-[#69f0ae]'>
+        <div className='font-bold lg:text-lg font-mono pl-5 relative -mt-2'>
           {title_2}
-          <span className='absolute -bottom-0.5 left-5 w-5 h-0.5 bg-white rounded-full'></span>
-        </div>
-        <div className='hidden lg:block absolute right-6  duration-700 ease-in-out transition-all scale-[2] translate-y-6 rotate-12 opacity-20 group-hover:opacity-80 group-hover:scale-100 group-hover:translate-y-0 group-hover:rotate-0'>
-          <i className='fa-solid fa-fire-flame-curved text-4xl'></i>
+          <span className='absolute -bottom-0.5 left-5 w-5 h-0.5 bg-[#1a1a1a] rounded-full'></span>
         </div>
       </Link>
       {/* 第三个标签在小屏上不显示 */}
       <Link
         href={url_3}
-        className='group relative overflow-hidden bg-gradient-to-r from-teal-300 to-cyan-300 hidden h-20 xl:flex justify-start items-center text-white rounded-xl xl:hover:w-1/2 xl:w-1/3 transition-all duration-500 ease-in'>
-        <div className='font-bold text-lg pl-5 relative -mt-2'>
+        className='group relative overflow-hidden bg-gradient-to-r from-[#ff4081] to-[#f50057] hidden h-20 xl:flex justify-start items-center text-white rounded-xl xl:hover:w-1/2 xl:w-1/3 transition-all duration-500 ease-in border border-[#ff80ab]'>
+        <div className='font-bold text-lg font-mono pl-5 relative -mt-2'>
           {title_3}
           <span className='absolute -bottom-0.5 left-5 w-5 h-0.5 bg-white rounded-full'></span>
         </div>
@@ -354,17 +362,15 @@ function TodayCard({ cRef, siteInfo }) {
   return (
     <div
       id='today-card'
-      className={`${
-        isCoverUp ? ' ' : 'pointer-events-none'
-      } overflow-hidden absolute hidden xl:flex flex-1 flex-col h-full top-0 w-full`}>
+      className={`${isCoverUp ? ' ' : 'pointer-events-none'
+        } overflow-hidden absolute hidden xl:flex flex-1 flex-col h-full top-0 w-full`}>
       <div
         id='card-body'
         onClick={handleCardClick}
-        className={`${
-          isCoverUp
-            ? 'opacity-100 cursor-pointer'
-            : 'opacity-0 transform scale-110 pointer-events-none'
-        } shadow transition-all duration-200 today-card h-full bg-black rounded-xl relative overflow-hidden flex items-end`}>
+        className={`${isCoverUp
+          ? 'opacity-100 cursor-pointer'
+          : 'opacity-0 transform scale-110 pointer-events-none'
+          } shadow transition-all duration-200 today-card h-full bg-black rounded-xl relative overflow-hidden flex items-end`}>
         {/* 卡片文字信息 */}
         <div
           id='today-card-info'
@@ -398,9 +404,8 @@ function TodayCard({ cRef, siteInfo }) {
         <img
           src={siteInfo?.pageCover}
           id='today-card-cover'
-          className={`${
-            isCoverUp ? '' : ' pointer-events-none'
-          } hover:scale-110 duration-1000 object-cover cursor-pointer today-card-cover absolute w-full h-full top-0`}
+          className={`${isCoverUp ? '' : ' pointer-events-none'
+            } hover:scale-110 duration-1000 object-cover cursor-pointer today-card-cover absolute w-full h-full top-0`}
         />
       </div>
     </div>
